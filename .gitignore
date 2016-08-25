@@ -1,1 +1,9 @@
 node_modules/
+.meteor/.finished-upgraders
+.meteor/packages
+.meteor/versions
+.meteor/release
+*.finished-upgraders
+.meteor/packages
+.meteor/release
+.meteor/versions
