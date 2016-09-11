@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 import { Meteor } from 'meteor/meteor';
 import { render } from 'react-dom';
-
 import App from '../imports/ui/App.jsx';
-import Navbar from '../imports/ui/Navbar.jsx';
+import Login from '../imports/ui/Login.jsx';
+import { Router, Route, hashHistory } from 'react-router'
+
 
 Meteor.startup(() => {
-  render(<Navbar />, document.getElementById('target-header'));
-  render(<App />, document.getElementById('target-place'));
+  render(<Router history={hashHistory}>
+    <Route path="/" component={App} >
+      <Route path="/login" component={Login}/>
+    </Route>
+  </Router>
+  , document.getElementById('target-place'));
 });
