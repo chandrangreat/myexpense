@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import Navbar from './Navbar.jsx';
-import Welcome from './Welcome.jsx';
 
 
 export default class App extends Component {
@@ -10,9 +9,6 @@ export default class App extends Component {
           <header id="target-header">
             <Navbar />
           </header>
-        <section className="welcome-block">
-            <Welcome />
-        </section>
         {this.props.children}
       </div>
     );
