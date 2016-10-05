@@ -1,15 +1,20 @@
 import React, {Component, PropTypes} from 'react';
 import ReactDOM from 'react-dom';
 //import $ from 'jquery';
+import { handleSignup } from '../../modules/signup';
 import { browserHistory } from 'react-router';
 import { Accounts } from 'meteor/accounts-base';
 
 export default class Signup extends Component{
+
+    componentDidMount(){
+        handleSignup({component : this});
+    }
  
     handleSubmit(event){
         event.preventDefault();
-      const uname = ReactDOM.findDOMNode(this.refs.uname).value.trim();
-      const password = ReactDOM.findDOMNode(this.refs.password).value.trim();
+    //   const uname = ReactDOM.findDOMNode(this.refs.uname).value.trim();
+    //   const password = ReactDOM.findDOMNode(this.refs.password).value.trim();
      
     }
 
