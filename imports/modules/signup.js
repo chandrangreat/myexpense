@@ -1,4 +1,5 @@
-//import $ from 'jquery';
+import $ from 'jquery';
+import 'jquery-validation';
 import { browserHistory } from 'react-router';
 import { Accounts } from 'meteor/accounts-base';
 import { getInputValue } from './get-input-value';
@@ -18,7 +19,6 @@ const getUserData = () =>({
 
 const signUp = () => {
   const user = getUserData();
-
   Accounts.createUser(user, (error) => {
     if (error) {
       alert('Error');
@@ -29,8 +29,46 @@ const signUp = () => {
   });
 };
 
+const validate = () => {
+  $(component.refs.signup).validate({
+    rules: {
+      fname: {
+        required: true,
+      },
+      lname: {
+        required: true,
+      },
+      uname: {
+        required: true,
+      },
+      password: {
+        required: true,
+        minlength: 6,
+      },
+    },
+    messages: {
+      fname: {
+        required: 'First name?',
+      },
+      lname: {
+        required: 'Last name?',
+      },
+      uname: {
+        required: 'Need a username here.',
+      },
+      password: {
+        required: 'Need a password here.',
+        minlength: 'Use at least six characters, please.',
+      },
+    },
+    submitHandler() { signUp(); },
+  });
+};
+
+
 export const handleSignup = (options) => {
   component = options.component;
-  signUp();
+  console.log(component);
+  validate();
 };
 
