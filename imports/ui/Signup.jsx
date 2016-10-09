@@ -1,8 +1,4 @@
 import React, {Component, PropTypes} from 'react';
-import ReactDOM from 'react-dom';
-//import $ from 'jquery';
-import { browserHistory } from 'react-router';
-import { Accounts } from 'meteor/accounts-base';
 import { handleSignup } from '../modules/signup';
 
 export default class Signup extends Component{

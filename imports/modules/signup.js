@@ -7,7 +7,7 @@ import { getInputValue } from './get-input-value';
 let component;
 
 const getUserData = () =>({
-    email: getInputValue(component.refs.uname),
+    username: getInputValue(component.refs.uname),
   password: getInputValue(component.refs.password),
   profile: {
     name: {
@@ -21,7 +21,7 @@ const signUp = () => {
   const user = getUserData();
   Accounts.createUser(user, (error) => {
     if (error) {
-      alert('Error');
+      alert(error.reason);
     } else {
       browserHistory.push('/');
       alert('Welcome');//Bert.alert('Welcome!', 'success');
@@ -68,7 +68,7 @@ const validate = () => {
 
 export const handleSignup = (options) => {
   component = options.component;
-  console.log(component);
+  //console.log(component);
   validate();
 };
 
