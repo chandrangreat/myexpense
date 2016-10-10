@@ -7,7 +7,7 @@ body{
 }
 
 .navbar {
-    background-color: violet;
+    background-color: #db4c3f;
     padding: 20px;
 }
 
@@ -15,7 +15,10 @@ body{
     font-size: 20px;
         margin: auto 25px;
 }
-
+.navbar-item a {
+    color: #ffffff;
+    text-decoration: none;
+}
 .navbar-account {
     float: right;
 }
@@ -29,4 +32,9 @@ body{
     font-size: 20px;
 
     /* margin: auto; */
+}
+
+.submit-btn{
+    background-color: #db4c3f;
+    color: #ffffff;
 }
