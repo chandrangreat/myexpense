@@ -8,13 +8,20 @@ import Welcome from '../imports/ui/Welcome.jsx';
 import Signup from '../imports/ui/Signup.jsx';
 import '../node_modules/wingcss/dist/wing.min.css';
 
-
+const requireAuth = (nextState, replace) => {
+  if(!Meteor.loggingIn() && !Meteor.userId()){
+    replace({
+      pathname:'/login',
+      state: { nextPathname: nextState.location.pathname },
+    });
+  }
+};
 
 Meteor.startup(() => {
   render(<Router history={browserHistory}>
     <Route path="/" component={App} >
       <IndexRoute component={Welcome}/>
-      <Route path="/signup" component={Signup}/>
+      <Route path="/signup" component={Signup} onEnter={ requireAuth }/>
       <Route path="/login" component={Login}/>
     </Route>
   </Router>
