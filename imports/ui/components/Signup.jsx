@@ -1,5 +1,5 @@
 import React, {Component, PropTypes} from 'react';
-import { handleSignup } from '../modules/signup';
+import { handleSignup } from '../../modules/signup';
 
 export default class Signup extends Component{
 

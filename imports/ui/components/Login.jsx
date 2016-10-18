@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { handleLogin } from '../modules/login';
+import { handleLogin } from '../../modules/login';
 
 export default class Login extends Component{
 

@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { Meteor } from 'meteor/meteor';
 import { render } from 'react-dom';
 import { Router, Route, browserHistory, IndexRoute } from 'react-router'
-import App from '../imports/ui/App.jsx';
-import Login from '../imports/ui/Login.jsx';
-import Welcome from '../imports/ui/Welcome.jsx';
-import Signup from '../imports/ui/Signup.jsx';
+import App from '../imports/ui/components/App.jsx';
+import Login from '../imports/ui/components/Login.jsx';
+import Welcome from '../imports/ui/components/Welcome.jsx';
+import Signup from '../imports/ui/components/Signup.jsx';
 import '../node_modules/wingcss/dist/wing.min.css';
 
 const requireAuth = (nextState, replace) => {
