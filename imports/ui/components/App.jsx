@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Navbar from './Navbar.jsx';
+import Navbar from '../containers/app-navigation';
 
 
 export default class App extends Component {
