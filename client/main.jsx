@@ -6,6 +6,7 @@ import App from '../imports/ui/components/App.jsx';
 import Login from '../imports/ui/components/Login.jsx';
 import Welcome from '../imports/ui/components/Welcome.jsx';
 import Signup from '../imports/ui/components/Signup.jsx';
+import Income from '../imports/ui/components/Income.jsx';
 import '../node_modules/wingcss/dist/wing.min.css';
 
 const requireAuth = (nextState, replace) => {
@@ -21,8 +22,9 @@ Meteor.startup(() => {
   render(<Router history={browserHistory}>
     <Route path="/" component={App} >
       <IndexRoute component={Welcome}/>
-      <Route path="/signup" component={Signup} onEnter={ requireAuth }/>
+      <Route path="/signup" component={Signup}/>
       <Route path="/login" component={Login}/>
+      <Route path="/enterIncome" component={Income}  onEnter={ requireAuth } />
     </Route>
   </Router>
   , document.getElementById('target-place'));
