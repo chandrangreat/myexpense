@@ -23,8 +23,7 @@ const signUp = () => {
     if (error) {
       alert(error.reason);
     } else {
-      browserHistory.push('/');
-      alert('Welcome');//Bert.alert('Welcome!', 'success');
+      browserHistory.push('/enterIncome');
     }
   });
 };
