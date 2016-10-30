@@ -1,8 +1,10 @@
 import $ from 'jquery';
+import { Meteor } from 'meteor/meteor';
 import 'jquery-validation';
 import { browserHistory } from 'react-router';
 import { Accounts } from 'meteor/accounts-base';
 import { getInputValue } from './get-input-value';
+import { insertUser } from '../api/expenses/methods.js';
 
 let component;
 
@@ -23,6 +25,11 @@ const signUp = () => {
     if (error) {
       alert(error.reason);
     } else {
+      var userId = Meteor.userId();
+      insertUser.call({userId:userId},(error) => {
+        if(error){alert(error);}
+        else {alert('success')}
+      });
       browserHistory.push('/enterIncome');
     }
   });
