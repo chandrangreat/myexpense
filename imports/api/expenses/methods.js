@@ -14,6 +14,20 @@ export const insertUser = new ValidatedMethod({
   },
 });
 
+export const checkIncomeFlag = new ValidatedMethod({
+  name: 'user.checkFlag',
+  validate: new SimpleSchema({
+    userId: { type: String },
+  }).validator(),
+  run(usersId){
+    let userId = usersId.userId;
+    const id= Expenses.findOne({userId:userId});
+    console.log(id);
+      if(id.incomeFlag == 0) { return false; }
+      else return true;
+  }
+});
+
   // 'user.insert'(userId){
   //   check(userId,String);
   //   if (! this.userId) {
