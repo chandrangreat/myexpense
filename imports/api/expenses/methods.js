@@ -2,7 +2,7 @@ import { Expenses } from './expenses';
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 import { ValidatedMethod } from 'meteor/mdg:validated-method';
 
-
+//Method to insert user while signing up
 export const insertUser = new ValidatedMethod({
   name: 'user.insert',
   validate: new SimpleSchema({
@@ -14,6 +14,7 @@ export const insertUser = new ValidatedMethod({
   },
 });
 
+//Method to check the value 'incomeFlag' in order to redirect user tp Income.jsx page
 export const checkIncomeFlag = new ValidatedMethod({
   name: 'user.checkFlag',
   validate: new SimpleSchema({
@@ -22,23 +23,25 @@ export const checkIncomeFlag = new ValidatedMethod({
   run(usersId){
     let userId = usersId.userId;
     const id= Expenses.findOne({userId:userId});
-    console.log(id);
+    //console.log(id);
       if(id.incomeFlag == 0) { return false; }
       else return true;
   }
 });
 
-  // 'user.insert'(userId){
-  //   check(userId,String);
-  //   if (! this.userId) {
-  //     throw new Meteor.Error('not-authorized');
-  //   }
-  //   Expenses.insert({
-  //     userId: userId
-  //   });
-  // },
-
-  // 'user.checkIncomeFlag'(userId){
-  //   let id= Expenses.findOne({userId:userId},{ incomeFlag:1 });
-  //   console.log(id);
-  // },
+//Method to save the Income value entered by User and set the 'incomeFlag'' value
+export const setIncomeAndFlag = new ValidatedMethod({
+  name: 'user.setIncomeAndFlag',
+  validate: new SimpleSchema({
+    userId: { type: String },
+    userIncome : { type : Number }
+  }).validator(),
+  run(usersId){
+    let userId = usersId.userId;
+    let userIncome = usersId.userIncome;
+    const id= Expenses.update( { userId:userId }, { $set : { incomeFlag : 1, income : userIncome } } );
+    //console.log(id);
+    if(id.incomeFlag == 0) { return false; }
+      else return true;
+     }
+});
