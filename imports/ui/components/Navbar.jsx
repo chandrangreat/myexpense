@@ -15,7 +15,6 @@ export default class Navbar extends Component{
   render(){
     return (
       <div className="navbar">
-        <span className="navbar-item"><IndexLink to="/" activeClassName="active">Home</IndexLink></span>
         { this.renderNavigation(this.props.hasUser) }
       </div>
     );

@@ -14,6 +14,7 @@ body{
 .navbar-item {
     font-size: 20px;
         margin: auto 25px;
+        color: #ffffff;
 }
 .navbar-item a {
     color: #ffffff;
