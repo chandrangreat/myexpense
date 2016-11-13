@@ -16,7 +16,7 @@ export default class Income extends Component{
         return (
             <div className="container income-container">
                 <div className="row">
-                    <div className="col-6 centered">
+                    <div className="col-12 centered">
                     <h3 className="text-center">What's your monthly income?</h3>
                      <form ref="incomeForm" className="imcome" onSubmit={ this.handleSubmit }>
                         <input ref="income" type="text" name="income" placeholder="Enter you monthly income"/>

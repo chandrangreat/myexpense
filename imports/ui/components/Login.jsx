@@ -14,7 +14,7 @@ export default class Login extends Component{
         return(
             <div className="container login-container">
                 <div className="row">
-                    <div className="col-6 centered">
+                    <div className="col-12 centered">
                     <h3 className="text-center">Login</h3>
                      <form ref="login" className="login" onSubmit={ this.handleSubmit }>
                         <input ref="uname" type="text" name="uname" placeholder="Username"/>
