@@ -19,9 +19,9 @@ const login = () => {
         if(error){alert(error);}
       });
       if(checkFlag){
-        browserHistory.push('/');
+        browserHistory.push('/dashboard');
       }else{
-        browserHistory.push('/enterIncome');        
+        browserHistory.push('/enterIncome');
       }
       alert('Welcome');//Bert.alert('Welcome!', 'success');
     }
@@ -56,4 +56,3 @@ export const handleLogin = (options) => {
   //console.log(component);
   validate();
 };
-

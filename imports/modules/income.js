@@ -14,7 +14,7 @@ const insertIncome = () => {
   setIncomeAndFlag.call({userId: userId, userIncome : userIncome}, (error) => {
     if(error){ alert(error); }
     else {
-      browserHistory.push('/');
+      browserHistory.push('/dashboard');
     }
   });
 };
@@ -41,4 +41,3 @@ export const handleUserIncome = (options) => {
   //console.log(component);
   validate();
 };
-
