@@ -14,11 +14,12 @@ const userName = () => {
 
 export const AuthenticatedNavigation = () => (
   <div>
+    <span className="navbar-item">Hi { userName() }</span>
     <span className="navbar-item"><Link to="/dashboard" activeClassName="active">Dashboard</Link></span>
     <span className="navbar-account">
-          <span className="navbar-item">Hi { userName() }</span>
+          <span className="navbar-item">+Add Entry</span>
           <span className="navbar-item">Settings</span>
-          <span className="navbar-item" onClick={ handleLogout }><Link to="javascript:void(0)">Logout</Link></span>
+          <span className="navbar-item" onClick={ handleLogout }><Link>Logout</Link></span>
     </span>
   </div>
 );
