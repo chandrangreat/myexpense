@@ -19,12 +19,21 @@ const requireAuth = (nextState, replace) => {
   }
 };
 
+const loggedinState = (nextState, replace) => {
+   if(Meteor.loggingIn() && Meteor.userId()){
+     replace({
+       pathname:'/dashboard',
+       state: { nextPathname: nextState.location.pathname },
+     })
+   }
+};
+
 Meteor.startup(() => {
   render(<Router history={browserHistory}>
     <Route path="/" component={App} >
       <IndexRoute component={Welcome}/>
-      <Route path="/signup" component={Signup}/>
-      <Route path="/login" component={Login}/>
+      <Route path="/signup" component={Signup} onEnter={ loggedinState } />
+      <Route path="/login" component={Login} onEnter={ loggedinState } />
       <Route path="/enterIncome" component={Income}  onEnter={ requireAuth } />
       <Route path="/dashboard" component={Dashboard} onEnter={ requireAuth } />
       <Route path="/addentry" component={AddEntry} onEnter= { requireAuth } />
