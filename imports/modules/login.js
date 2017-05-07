@@ -23,7 +23,7 @@ const login = () => {
       }else{
         browserHistory.push('/enterIncome');
       }
-      alert('Welcome');//Bert.alert('Welcome!', 'success');
+      //alert('Welcome');//Bert.alert('Welcome!', 'success');
     }
   });
 };
