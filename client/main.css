@@ -39,3 +39,7 @@ body{
     background-color: #db4c3f;
     color: #ffffff;
 }
+
+.logout-link{
+    cursor: pointer;
+}
